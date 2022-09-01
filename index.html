@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Validation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <div class="main">
+        <form action="" class="form">
+            <h2 style="color: red;"" class=" title">Đăng ký thành viên</h2>
+            <span style="font-size: 21px;
+            font-weight: 600;     
+            color: #555;">
+                Cùng nhau đăng ký học lập trình tại F8<span><i class="fa-solid fa-heart"></i></span></span>
+
+            <label for="form-text-name" class="form-label">Nhập tên đầy đủ:</label>
+            <div class="form-input">
+                <input type="text" name="name" rules="required" class="form-text name" id="form-text-name"
+                    placeholder="Name?">
+                <i class="none fa-solid fa-check"></i>
+                <span class="form-noti"></span>
+            </div>
+
+            <label for="form-text-email" class="form-label">Nhập email:</label>
+            <div class="form-input">
+                <input type="text" name="emmail" rules="required|email" class="form-text email" id="form-text-email"
+                    placeholder="Email?">
+                <i class="none fa-solid fa-check"></i>
+                <span class="form-noti"></span>
+            </div>
+
+            <label for="password" class="form-label">Nhập mật khẩu:</label>
+            <div class="form-input">
+                <input type="password" name="pass" rules="required|minPassword:6" class="form-text pass" id="password"
+                    placeholder="Mật khẩu?">
+                <i class="none fa-solid fa-check"></i>
+                <span class="form-noti"></span>
+            </div>
+
+            <label for="form-text-repass" class="form-label">Nhập lại mật khẩu:</label>
+            <div class="form-input">
+                <input type="password" name="repass" rules="required|rePassword" class="form-text repass"
+                    id="form-text-repass" placeholder="Nhập lại mật khẩu?">
+                <i class="none fa-solid fa-check"></i>
+                <span class="form-noti"></span>
+            </div>
+
+            <div class="form-input">
+                <div class="gender-wrap">
+                    <div class="gender-wrap__item">
+                        <label for="male">Nam</label>
+                        <input type="radio" name="gender" rules="required" id="male" value="male">
+                    </div>
+                    <div class="gender-wrap__item">
+                        <label for="female">Nữ</label>
+                        <input type="radio" name="gender" rules="required" id="female" value="female">
+                    </div>
+                    <div class="gender-wrap__item">
+                        <label for="other">Khác</label>
+                        <input type="radio" name="gender" rules="required" id="other" value="other">
+                    </div>
+                </div>
+
+                <i class="none fa-solid fa-check"></i>
+
+                <span class="form-noti"></span>
+            </div>
+
+
+            <div class="form-input">
+                <label class="province" for="province">--Chọn TP/Tỉnh--</label>
+                <select class="province-sel" name="province" rules="required" rules="required" id="province">
+                    <option value="">Chọn TP/Tỉnh</option>
+                    <option value="Hà Nội">Hà Nội</option>
+                    <option value="Hải Phòng">Hải Phòng</option>
+                    <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                </select>
+                <i class="none fa-solid fa-check"></i>
+                <span class="form-noti"></span>
+            </div>
+
+
+            <label for="" class="form-label">Lựa chọn cuốn sách: </label>
+            <div class="form-input">
+                <div class="opcheck-wrap">
+                    <input type="checkbox" name="books" rules="required" value="Dưới cánh đại bàng" class="book"
+                        id="book-dcdb">
+                    <label for="book-dcdb">Dưới cánh đại bàng</label>
+                </div>
+                <div class="opcheck-wrap">
+                    <input type="checkbox" name="books" rules="required" value="Thượng Dương" class="book" id="book-td">
+                    <label for="book-td">Thượng Dương</label>
+                </div>
+                <div class="opcheck-wrap">
+                    <input type="checkbox" name="books" rules="required" value="Săn Mộ" class="book" id="book-sm">
+                    <label for="book-sm">Săn Mộ</label>
+                </div>
+
+                <i class="none fa-solid fa-check"></i>
+                <span class="form-noti"></span>
+            </div>
+
+            <label for="file" class="form-label">Chọn file: </label>
+            <div class="form-input">
+                <div class="choose-file ">
+                    <input type="file" name="file" rules="required" id="file">
+                    <i class="none fa-solid fa-check"></i>
+                </div>
+                <span class="form-noti"></span>
+            </div>
+
+            <button class="button-regist">Đăng ký</button>
+
+        </form>
+    </div>
+
+    <script src="validation1.js"></script>
+
+    <script>
+        // Validation(".form", {
+        //     onSubmit: function (data) {
+        //         //Call API
+        //         console.log(data);
+        //     }
+        // });
+        let validate = new Validation(".form");
+        validate.onSubmit = function (data) {
+            console.log(data);
+        }
+    </script>
+</body>
+
+</html>
